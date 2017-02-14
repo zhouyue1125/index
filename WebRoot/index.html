@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		
+		<meta charset="utf-8">
+		<link href="main.css" type="text/css" rel="stylesheet">
+		<title>登陆界面</title>
+		<script type="text/javascript" src="jquery-3.0.0.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			  $("#submit").click(function(){
+				  $.ajax({
+					   type: "POST",
+					   url: "TestServlet.do?",//请求的后台地址
+					   data: "t=1",//前台传给后台的参数
+					   success: function(msg){//msg:返回值
+					   window.open("Redirect.html");
+					   }
+					});
+				  
+			});
+		});
+</script>
+	</head>
+	
+	<body>
+		<div class="login_ico">
+			<img src="images/login_ico.png">	
+		</div>
+		<div class="login_putin">
+			<ul>
+				<li><input type="text" >用户名</li>
+				<li><input type="password" >密码</li>
+			</ul>
+		</div>
+		<div class="login_btn">
+			<input id="submit" type="submit" value="登陆">
+		</div>
+	</body>
+</html>
+
